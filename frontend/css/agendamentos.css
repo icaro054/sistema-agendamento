@@ -1,0 +1,44 @@
+/* GRID ESPECÍFICO DE AGENDAMENTO (3 Colunas) */
+.grid-agendamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Faz os campos de seleção grandes ocuparem mais espaço */
+.duplo-agendamento {
+    grid-column: span 3;
+}
+
+/* Em telas maiores, podemos deixar os select dividindo a mesma linha */
+@media (min-width: 1200px) {
+    .duplo-agendamento {
+        grid-column: span 1;
+    }
+}
+
+/* Posiciona os botões ocupando a linha toda no final do grid */
+.acoes-agendamento {
+    grid-column: 1 / -1; 
+}
+
+/* FILTROS DA AGENDA (No cabeçalho da tabela) */
+.filtros-agenda {
+    display: flex;
+    gap: 10px;
+}
+
+.input-filtro {
+    padding: 8px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--texto-principal);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-filtro:focus {
+    border-color: var(--azul-confianca);
+}

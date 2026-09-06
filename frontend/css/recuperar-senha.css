@@ -1,0 +1,123 @@
+.tela-recuperacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.caixa-recuperacao {
+    background-color: var(--branco-puro);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border-top: 6px solid var(--verde-saude);
+}
+
+.logo-sistema {
+    font-size: 28px;
+    color: var(--azul-confianca);
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-sistema i {
+    color: var(--verde-saude);
+    font-size: 32px;
+}
+
+.caixa-recuperacao h2 {
+    color: var(--texto-principal);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.caixa-recuperacao p {
+    color: var(--texto-secundario);
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.campo { 
+    text-align: left; 
+    margin-bottom: 25px; 
+    position: relative; 
+}
+
+.campo label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    font-size: 14px; 
+    color: var(--azul-confianca); 
+}
+
+.campo i {
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    color: var(--texto-secundario);
+}
+
+.campo input { 
+    width: 100%; 
+    padding: 12px 12px 12px 40px;
+    border: 1px solid var(--borda); 
+    border-radius: 6px; 
+    font-size: 15px;
+    color: var(--texto-principal);
+    transition: all 0.3s;
+}
+
+.campo input:focus { 
+    border-color: var(--verde-saude); 
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.15); 
+}
+
+/* Botão principal com a cor verde de saúde */
+.btn-enviar { 
+    width: 100%; 
+    padding: 14px; 
+    background-color: var(--verde-saude); 
+    color: var(--branco-puro); 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-enviar:hover { 
+    background-color: var(--azul-confianca); 
+}
+
+/* Link de voltar ao login */
+.voltar-login a {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.voltar-login a:hover {
+    color: var(--azul-confianca);
+}

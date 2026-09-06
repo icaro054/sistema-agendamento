@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vitalis Agendamentos</title>
+    
+    <!-- 1. Estilos Globais e Variáveis -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 2. Estilos Específicos desta Tela -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <main class="tela-login">
+        <div class="caixa-login">
+            
+            <div class="logo-sistema">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <p>Informe suas credenciais para acessar a recepção</p>
+            
+            <form action="pages/dashboard.html" method="GET">
+                <div class="campo">
+                    <label for="usuario">Usuário</label>
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="usuario" placeholder="Digite seu login" required>
+                </div>
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="senha" placeholder="••••••••" required>
+                </div>
+                <div class="opcoes-extras">
+                    <a href="recuperar-senha.html" class="link-esqueci-senha">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" id="btnEntrar" class="btn-entrar">
+                    Acessar Sistema <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="opcoes-rodape" style="margin-top: 25px; text-align: center; font-size: 14px; color: var(--texto-secundario); border-top: 1px solid var(--borda); padding-top: 20px;">
+                    Não tem uma conta? 
+                    <a href="cadastro.html" style="color: var(--azul-confianca); font-weight: bold; text-decoration: none;">Cadastre-se aqui</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

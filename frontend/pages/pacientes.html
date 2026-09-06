@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - Vitalis Agendamentos</title>
+    
+    <!-- Reaproveitamos o global e o dashboard para a barra lateral -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- CSS específico apenas para os formulários desta tela -->
+    <link rel="stylesheet" href="../css/pacientes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout-app">
+        
+        <!-- BARRA LATERAL -->
+        <aside class="menu-lateral">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <nav class="navegacao">
+                <a href="dashboard.html" class="item-menu">
+                    <i class="fa-solid fa-chart-pie"></i> Painel Geral
+                </a>
+                <a href="agendamentos.html" class="item-menu">
+                    <i class="fa-regular fa-calendar-check"></i> Agendamentos
+                </a>
+                <!-- Classe "ativo" movida para cá -->
+                <a href="pacientes.html" class="item-menu ativo">
+                    <i class="fa-solid fa-users"></i> Pacientes
+                </a>
+                <a href="profissionais.html" class="item-menu">
+                    <i class="fa-solid fa-user-doctor"></i> Profissionais
+                </a>
+            </nav>
+
+            <div class="rodape-sidebar">
+                <a href="../index.html" class="btn-sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair do Sistema
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <header class="cabecalho-pagina">
+                <div>
+                    <h1>Gestão de Pacientes</h1>
+                    <p>Cadastre novos pacientes ou gerencie os registros existentes.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <section class="painel-dados form-section">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-user-plus"></i> Novo Paciente</h2>
+                </div>
+                <form class="grid-formulario">
+                    <div class="campo-form duplo">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Digite o nome completo" required>
+                    </div>
+                    <div class="campo-form">
+                        <label>CPF</label>
+                        <input type="text" placeholder="000.000.000-00" required>
+                    </div>
+                    <div class="campo-form">
+                        <label>Data de Nascimento</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="campo-form">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="text" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="campo-form">
+                        <label>Gênero</label>
+                        <select required>
+                            <option value="">Selecione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="acoes-form duplo">
+                        <button type="reset" class="btn-secundario">Limpar</button>
+                        <button type="submit" class="btn-primario"><i class="fa-solid fa-save"></i> Salvar Paciente</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- LISTAGEM DE PACIENTES -->
+            <section class="painel-dados">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-list"></i> Pacientes Cadastrados</h2>
+                    
+                    <!-- Barra de pesquisa -->
+                    <div class="busca-simples">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Buscar paciente...">
+                    </div>
+                </div>
+                <table class="tabela-padrao">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Carlos Eduardo Silva</strong></td>
+                            <td>111.222.333-44</td>
+                            <td>(11) 98765-4321</td>
+                            <td class="text-center">
+                                <button class="btn-icone editar" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-icone excluir" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mariana Costa</strong></td>
+                            <td>555.666.777-88</td>
+                            <td>(11) 91234-5678</td>
+                            <td class="text-center">
+                                <button class="btn-icone editar"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-icone excluir"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
