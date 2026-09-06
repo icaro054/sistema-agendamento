@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profissionais - Vitalis Agendamentos</title>
+    
+    <!-- Importações CSS (Reaproveitando a estrutura de pacientes) -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/pacientes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout-app">
+        
+        <!-- BARRA LATERAL -->
+        <aside class="menu-lateral">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <nav class="navegacao">
+                <a href="dashboard.html" class="item-menu">
+                    <i class="fa-solid fa-chart-pie"></i> Painel Geral
+                </a>
+                <a href="agendamentos.html" class="item-menu">
+                    <i class="fa-regular fa-calendar-check"></i> Agendamentos
+                </a>
+                <a href="pacientes.html" class="item-menu">
+                    <i class="fa-solid fa-users"></i> Pacientes
+                </a>
+                <!-- Classe "ativo" no menu correspondente -->
+                <a href="profissionais.html" class="item-menu ativo">
+                    <i class="fa-solid fa-user-doctor"></i> Profissionais
+                </a>
+            </nav>
+
+            <div class="rodape-sidebar">
+                <a href="../index.html" class="btn-sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair do Sistema
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <header class="cabecalho-pagina">
+                <div>
+                    <h1>Quadro de Profissionais</h1>
+                    <p>Gerencie os médicos, enfermeiros e a equipe de recepção da clínica.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <section class="painel-dados form-section">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-user-tie"></i> Cadastrar Profissional</h2>
+                </div>
+                <form class="grid-formulario">
+                    
+                    <div class="campo-form duplo">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Nome do profissional" required>
+                    </div>
+                    
+                    <div class="campo-form">
+                        <label>Cargo / Tipo</label>
+                        <select required>
+                            <option value="">Selecione o cargo...</option>
+                            <option value="MEDICO">Médico(a)</option>
+                            <option value="ENFERMEIRO">Enfermeiro(a)</option>
+                            <option value="RECEPCAO">Recepcionista</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Especialidade (Se aplicável)</label>
+                        <input type="text" placeholder="Ex: Cardiologia">
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Registro (CRM / COREN)</label>
+                        <input type="text" placeholder="Número do conselho">
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Telefone de Contato</label>
+                        <input type="text" placeholder="(00) 00000-0000" required>
+                    </div>
+                    
+                    <div class="acoes-form duplo">
+                        <button type="reset" class="btn-secundario">Limpar</button>
+                        <button type="submit" class="btn-primario"><i class="fa-solid fa-save"></i> Salvar Registro</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- LISTAGEM DE PROFISSIONAIS -->
+            <section class="painel-dados">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-address-book"></i> Equipe Cadastrada</h2>
+                    
+                    <div class="busca-simples">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Buscar profissional...">
+                    </div>
+                </div>
+                <table class="tabela-padrao">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Especialidade</th>
+                            <th>Registro</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dra. Ana Paula</strong></td>
+                            <td>Médico</td>
+                            <td>Cardiologia</td>
+                            <td>CRM 123456</td>
+                            <td class="text-center">
+                                <button class="btn-icone editar" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-icone excluir" title="Inativar"><i class="fa-solid fa-ban"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Roberto</strong></td>
+                            <td>Médico</td>
+                            <td>Clínico Geral</td>
+                            <td>CRM 654321</td>
+                            <td class="text-center">
+                                <button class="btn-icone editar"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-icone excluir"><i class="fa-solid fa-ban"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Juliana Santos</strong></td>
+                            <td>Recepcionista</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="text-center">
+                                <button class="btn-icone editar"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-icone excluir"><i class="fa-solid fa-ban"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos - Vitalis Agendamentos</title>
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- CSS reaproveitado para formulários e tabelas -->
+    <link rel="stylesheet" href="../css/pacientes.css"> 
+    <!-- CSS específico desta tela -->
+    <link rel="stylesheet" href="../css/agendamentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout-app">
+        
+        <!-- BARRA LATERAL -->
+        <aside class="menu-lateral">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <nav class="navegacao">
+                <a href="dashboard.html" class="item-menu">
+                    <i class="fa-solid fa-chart-pie"></i> Painel Geral
+                </a>
+                <a href="agendamentos.html" class="item-menu ativo">
+                    <i class="fa-regular fa-calendar-check"></i> Agendamentos
+                </a>
+                <a href="pacientes.html" class="item-menu">
+                    <i class="fa-solid fa-users"></i> Pacientes
+                </a>
+                <a href="profissionais.html" class="item-menu">
+                    <i class="fa-solid fa-user-doctor"></i> Profissionais
+                </a>
+            </nav>
+
+            <div class="rodape-sidebar">
+                <a href="../index.html" class="btn-sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair do Sistema
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <header class="cabecalho-pagina">
+                <div>
+                    <h1>Central de Agendamentos</h1>
+                    <p>Marque novas consultas e gerencie a agenda clínica.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <!-- FORMULÁRIO DE AGENDAMENTO -->
+            <section class="painel-dados form-section">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-calendar-plus"></i> Nova Consulta</h2>
+                </div>
+                <!-- Usando uma variação do grid para 3 colunas -->
+                <form class="grid-agendamento">
+                    
+                    <div class="campo-form duplo-agendamento">
+                        <label>Buscar Paciente</label>
+                        <select required>
+                            <option value="">Selecione um paciente cadastrado...</option>
+                            <option value="1">Carlos Eduardo Silva</option>
+                            <option value="2">Mariana Costa</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-form duplo-agendamento">
+                        <label>Profissional / Especialidade</label>
+                        <select required>
+                            <option value="">Selecione o médico...</option>
+                            <option value="1">Dra. Ana Paula (Cardiologia)</option>
+                            <option value="2">Dr. Roberto (Clínico Geral)</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Data da Consulta</label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Horário</label>
+                        <input type="time" required>
+                    </div>
+                    
+                    <div class="acoes-form acoes-agendamento">
+                        <button type="reset" class="btn-secundario">Limpar</button>
+                        <button type="submit" class="btn-primario"><i class="fa-solid fa-check"></i> Confirmar Agendamento</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- LISTAGEM DA AGENDA -->
+            <section class="painel-dados">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-list-check"></i> Consultas Marcadas</h2>
+                    
+                    <div class="filtros-agenda">
+                        <input type="date" class="input-filtro" value="2026-09-03">
+                        <select class="input-filtro">
+                            <option value="">Todos os Médicos</option>
+                            <option value="1">Dra. Ana Paula</option>
+                            <option value="2">Dr. Roberto</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="tabela-padrao">
+                    <thead>
+                        <tr>
+                            <th>Data/Hora</th>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Status</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>03/09/2026 - 14:00</strong></td>
+                            <td>Carlos Eduardo Silva</td>
+                            <td>Dra. Ana Paula</td>
+                            <td><span class="badge badge-aguardando">Aguardando</span></td>
+                            <td class="text-center">
+                                <button class="btn-icone editar" title="Remarcar"><i class="fa-solid fa-clock"></i></button>
+                                <button class="btn-icone excluir" title="Cancelar Consulta"><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>03/09/2026 - 14:30</strong></td>
+                            <td>Mariana Costa</td>
+                            <td>Dr. Roberto</td>
+                            <td><span class="badge badge-atendimento">Em Atendimento</span></td>
+                            <td class="text-center">
+                                <button class="btn-icone editar" title="Remarcar"><i class="fa-solid fa-clock"></i></button>
+                                <button class="btn-icone excluir" title="Cancelar Consulta"><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

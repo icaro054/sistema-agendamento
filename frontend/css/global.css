@@ -1,0 +1,227 @@
+/* Importação centralizada do Font Awesome para não poluir o HTML */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+    /* Paleta Vitalis - Cores de Hospital / Clínica */
+    --azul-confianca: #005f73; 
+    --verde-saude: #0a9396;   
+    --fundo-clinico: #e9ecef; 
+    --branco-puro: #ffffff;
+    --texto-principal: #2b2d42;
+    --texto-secundario: #8d99ae;
+    --borda: #dee2e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fundo-clinico);
+    color: var(--texto-principal);
+}
+
+/* ESTRUTURA DO LAYOUT */
+.layout-app {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+/* MENU LATERAL (SIDEBAR) */
+.menu-lateral {
+    width: 260px;
+    background-color: var(--azul-confianca);
+    color: var(--branco-puro);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.logo-sidebar {
+    padding: 30px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-sidebar i { color: var(--verde-saude); font-size: 28px; }
+
+.navegacao {
+    flex: 1;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-menu {
+    padding: 15px 25px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.item-menu:hover, .item-menu.ativo {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--branco-puro);
+    border-left-color: var(--verde-saude);
+}
+
+.rodape-sidebar {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-sair {
+    color: #ff6b6b;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-sair:hover { color: #ff4757; }
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-principal {
+    flex: 1;
+    background-color: var(--fundo-clinico);
+    padding: 30px 40px;
+    overflow-y: auto; 
+}
+
+.cabecalho-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.cabecalho-pagina h1 { color: var(--texto-principal); font-size: 26px; }
+.cabecalho-pagina p { color: var(--texto-secundario); font-size: 15px; margin-top: 5px; }
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background-color: var(--branco-puro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--azul-confianca);
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 2px solid var(--borda);
+}
+
+/* CARDS DE RESUMO */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card-resumo {
+    background-color: var(--branco-puro);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-left: 5px solid var(--verde-saude);
+}
+
+.icone-card {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.icone-card.azul { background-color: rgba(0, 95, 115, 0.1); color: var(--azul-confianca); }
+.icone-card.verde { background-color: rgba(10, 147, 150, 0.1); color: var(--verde-saude); }
+.icone-card.laranja { background-color: rgba(244, 162, 97, 0.1); color: #f4a261; }
+
+.info-card h3 { color: var(--texto-secundario); font-size: 14px; font-weight: 500; }
+.info-card h2 { color: var(--texto-principal); font-size: 32px; margin-top: 5px; }
+
+/* PAINEL E TABELA */
+.painel-dados {
+    background-color: var(--branco-puro);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.cabecalho-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cabecalho-painel h2 { color: var(--texto-principal); font-size: 18px; }
+
+.btn-novo {
+    background-color: var(--verde-saude);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-novo:hover { background-color: var(--azul-confianca); }
+
+.tabela-padrao {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-padrao th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid var(--borda);
+    color: var(--texto-secundario);
+    font-weight: 600;
+}
+
+.tabela-padrao td {
+    padding: 15px;
+    border-bottom: 1px solid var(--borda);
+    color: var(--texto-principal);
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-aguardando { background-color: rgba(244, 162, 97, 0.15); color: #d35400; }
+.badge-atendimento { background-color: rgba(10, 147, 150, 0.15); color: var(--verde-saude); }

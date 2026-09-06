@@ -1,0 +1,141 @@
+/* Espaçamento extra entre o formulário e a tabela */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.cabecalho-painel h2 i {
+    color: var(--verde-saude);
+    margin-right: 8px;
+}
+
+/* GRID DO FORMULÁRIO */
+.grid-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--azul-confianca);
+}
+
+.campo-form input,
+.campo-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--texto-principal);
+    background-color: #fcfcfc;
+    transition: border-color 0.3s;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+    border-color: var(--verde-saude);
+    outline: none;
+    background-color: var(--branco-puro);
+}
+
+/* Faz o campo ocupar a linha inteira */
+.duplo {
+    grid-column: span 2;
+}
+
+/* BOTÕES DO FORMULÁRIO */
+.acoes-form {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+    border-top: 1px solid var(--borda);
+    padding-top: 20px;
+}
+
+.btn-secundario {
+    padding: 10px 20px;
+    background-color: var(--fundo-clinico);
+    color: var(--texto-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secundario:hover {
+    background-color: #e2e6ea;
+    color: var(--texto-principal);
+}
+
+.btn-primario {
+    padding: 10px 20px;
+    background-color: var(--azul-confianca);
+    color: var(--branco-puro);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: var(--verde-saude);
+}
+
+/* CAMPO DE BUSCA NA TABELA */
+.busca-simples {
+    position: relative;
+    width: 250px;
+}
+
+.busca-simples i {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    color: var(--texto-secundario);
+}
+
+.busca-simples input {
+    width: 100%;
+    padding: 8px 10px 8px 35px;
+    border: 1px solid var(--borda);
+    border-radius: 20px; /* Bordas arredondadas para busca */
+    font-size: 13px;
+    outline: none;
+}
+
+.busca-simples input:focus {
+    border-color: var(--azul-confianca);
+}
+
+/* BOTÕES DE AÇÃO NA TABELA */
+.text-center {
+    text-align: center !important;
+}
+
+.btn-icone {
+    background: none;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin: 0 2px;
+}
+
+.btn-icone.editar { color: var(--azul-confianca); }
+.btn-icone.editar:hover { background-color: rgba(0, 95, 115, 0.1); }
+
+.btn-icone.excluir { color: #e74c3c; }
+.btn-icone.excluir:hover { background-color: rgba(231, 76, 60, 0.1); }

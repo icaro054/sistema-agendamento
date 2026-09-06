@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Senha - Vitalis Agendamentos</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth-fluxo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main class="tela-auth">
+        <div class="caixa-auth">
+            <div class="logo-sistema">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <h2>Criar Nova Senha</h2>
+            <p>Crie uma nova senha forte para acessar o sistema.</p>
+            
+            <!-- Conclui o fluxo e volta para o Login -->
+            <form action="index.html" method="GET">
+                <div class="campo">
+                    <label for="senha">Nova Senha</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="senha" placeholder="••••••••" required>
+                </div>
+
+                <div class="campo">
+                    <label for="confirma-senha">Confirmar Nova Senha</label>
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" id="confirma-senha" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn-acao">
+                    Salvar e Entrar <i class="fa-solid fa-floppy-disk"></i>
+                </button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
