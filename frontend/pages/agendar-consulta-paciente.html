@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta - Vitalis Agendamentos</title>
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- Reaproveitamos o CSS de formulários -->
+    <link rel="stylesheet" href="../css/pacientes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout-app">
+        
+        <!-- BARRA LATERAL DO PACIENTE -->
+        <aside class="menu-lateral">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <nav class="navegacao">
+                <a href="dashboard-paciente.html" class="item-menu">
+                    <i class="fa-solid fa-house-medical"></i> Meu Resumo
+                </a>
+                <a href="agendar-consulta-paciente.html" class="item-menu ativo">
+                    <i class="fa-regular fa-calendar-plus"></i> Agendar Consulta
+                </a>
+                <a href="#" class="item-menu">
+                    <i class="fa-solid fa-file-medical"></i> Meu Histórico
+                </a>
+            </nav>
+
+            <div class="rodape-sidebar">
+                <a href="../index.html" class="btn-sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <header class="cabecalho-pagina">
+                <div>
+                    <h1>Marcar Nova Consulta</h1>
+                    <p>Escolha a especialidade e o melhor horário para o seu atendimento.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <div class="avatar"><i class="fa-regular fa-user"></i></div>
+                </div>
+            </header>
+
+            <!-- FORMULÁRIO DE AGENDAMENTO (VISÃO DO PACIENTE) -->
+            <section class="painel-dados form-section">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-stethoscope"></i> Detalhes do Agendamento</h2>
+                </div>
+                
+                <form class="grid-formulario">
+                    
+                    <!-- Ocupa a linha inteira para dar destaque -->
+                    <div class="campo-form duplo">
+                        <label>Especialidade Desejada</label>
+                        <select required>
+                            <option value="">Selecione a especialidade...</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="clinico">Clínico Geral</option>
+                            <option value="ortopedia">Ortopedia</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-form duplo">
+                        <label>Profissional (Opcional)</label>
+                        <select>
+                            <option value="">Sem preferência (Qualquer médico disponível)</option>
+                            <option value="1">Dra. Ana Paula</option>
+                            <option value="2">Dr. Roberto</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Data Preferencial</label>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="campo-form">
+                        <label>Horário</label>
+                        <select required>
+                            <option value="">Escolha um horário...</option>
+                            <option value="08:00">08:00 (Manhã)</option>
+                            <option value="10:30">10:30 (Manhã)</option>
+                            <option value="14:00">14:00 (Tarde)</option>
+                            <option value="16:00">16:00 (Tarde)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="acoes-form duplo">
+                        <button type="reset" class="btn-secundario">Cancelar</button>
+                        <button type="submit" class="btn-primario">
+                            <i class="fa-regular fa-calendar-check"></i> Confirmar Agendamento
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- INSTRUÇÕES OU AVISOS -->
+            <section class="painel-dados" style="background-color: rgba(0, 95, 115, 0.05); border: 1px dashed var(--azul-confianca);">
+                <div style="display: flex; gap: 15px; align-items: center; color: var(--azul-confianca);">
+                    <i class="fa-solid fa-circle-info" style="font-size: 24px;"></i>
+                    <div>
+                        <h3 style="font-size: 16px; margin-bottom: 5px;">Aviso Importante</h3>
+                        <p style="font-size: 14px; color: var(--texto-secundario);">Por favor, chegue com 15 minutos de antecedência. Em caso de imprevistos, cancele sua consulta com pelo menos 1 hora de antecedência através do seu painel.</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>

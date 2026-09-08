@@ -19,12 +19,15 @@
             <h2>Crie sua Conta de Paciente</h2>
             <p>Cadastre-se para agendar consultas e acessar seu histórico.</p>
             
-            <form id="formCadastro" action="index.html" method="GET">
+            <form id="formCadastro">
                 
+                <!-- Caixa para exibir mensagens de erro ou sucesso (oculta por padrão) -->
+                <div id="mensagemCadastro" style="display: none; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; font-weight: bold; text-align: center;"></div>
+
                 <div class="campo">
                     <label for="nome">Nome Completo</label>
                     <i class="fa-regular fa-user"></i>
-                    <input type="text" id="nome" name="nome" placeholder="Como deseja ser chamado(a)?" required>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                 </div>
 
                 <div class="campo">
@@ -55,9 +58,12 @@
                     <label for="senha">Criar Senha</label>
                     <i class="fa-solid fa-lock"></i>
                     <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+                    <small style="color: var(--texto-secundario); font-size: 12px; margin-top: 5px; display: block;">
+                        * Mínimo de 8 caracteres. Pode conter letras, números e símbolos (!@#$%).
+                    </small>
                 </div>
                 
-                <button type="submit" class="btn-acao">
+                <button type="submit" id="btnCadastrar" class="btn-acao">
                     Concluir Meu Cadastro <i class="fa-solid fa-check"></i>
                 </button>
 
@@ -65,6 +71,7 @@
                     <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Já sou paciente. Entrar</a>
                 </div>
             </form>
+            <script src="js/cadastro.js"></script>
         </div>
     </main>
 </body>

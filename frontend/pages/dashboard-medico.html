@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Médico - Vitalis Agendamentos</title>
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- Reaproveitamos o CSS da tabela de pacientes -->
+    <link rel="stylesheet" href="../css/pacientes.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout-app">
+        
+        <!-- BARRA LATERAL DO MÉDICO -->
+        <aside class="menu-lateral">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>Vitalis</span>
+            </div>
+            
+            <nav class="navegacao">
+                <a href="dashboard-medico.html" class="item-menu ativo">
+                    <i class="fa-solid fa-list-check"></i> Agenda do Dia
+                </a>
+                <a href="#" class="item-menu">
+                    <i class="fa-solid fa-clipboard-user"></i> Meus Pacientes
+                </a>
+                <a href="#" class="item-menu">
+                    <i class="fa-solid fa-file-waveform"></i> Prontuários
+                </a>
+            </nav>
+
+            <div class="rodape-sidebar">
+                <a href="../index.html" class="btn-sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair do Sistema
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <header class="cabecalho-pagina">
+                <div>
+                    <h1>Olá, Dr. Leonardo Henrique!</h1>
+                    <p>Resumo dos seus atendimentos para hoje.</p>
+                </div>
+                <div class="perfil-usuario">
+                    <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
+                </div>
+            </header>
+
+            <!-- CARDS DE RESUMO DO FLUXO DO DIA -->
+            <section class="grid-cards">
+                <div class="card-resumo">
+                    <div class="icone-card azul"><i class="fa-solid fa-users"></i></div>
+                    <div class="info-card">
+                        <h3>Total de Pacientes</h3>
+                        <h2>8</h2>
+                    </div>
+                </div>
+                <div class="card-resumo">
+                    <div class="icone-card laranja"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="info-card">
+                        <h3>Aguardando na Sala</h3>
+                        <h2>3</h2>
+                    </div>
+                </div>
+                <div class="card-resumo">
+                    <div class="icone-card verde"><i class="fa-solid fa-check-double"></i></div>
+                    <div class="info-card">
+                        <h3>Atendimentos Concluídos</h3>
+                        <h2>2</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILA DE ATENDIMENTO -->
+            <section class="painel-dados">
+                <div class="cabecalho-painel">
+                    <h2><i class="fa-solid fa-stethoscope"></i> Fila de Atendimento (Hoje)</h2>
+                    
+                    <div class="busca-simples">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Buscar paciente...">
+                    </div>
+                </div>
+                <table class="tabela-padrao">
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Paciente</th>
+                            <th>Tipo de Consulta</th>
+                            <th>Status</th>
+                            <th class="text-center">Ações Clínicas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Paciente que já está na sala com o médico -->
+                        <tr>
+                            <td><strong>14:00</strong></td>
+                            <td>Carlos Eduardo Silva</td>
+                            <td>Primeira Consulta</td>
+                            <td><span class="badge badge-atendimento">Em Atendimento</span></td>
+                            <td class="text-center">
+                                <button class="btn-primario" style="padding: 6px 12px; font-size: 13px; display: inline-flex;">
+                                    <i class="fa-solid fa-notes-medical"></i> Abrir Prontuário
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Paciente aguardando na recepção -->
+                        <tr>
+                            <td><strong>14:30</strong></td>
+                            <td>Mariana Costa</td>
+                            <td>Retorno / Exames</td>
+                            <td><span class="badge badge-aguardando">Aguardando</span></td>
+                            <td class="text-center">
+                                <button class="btn-secundario" style="padding: 6px 12px; font-size: 13px; display: inline-flex;" title="Chamar paciente">
+                                    <i class="fa-solid fa-bullhorn"></i> Chamar
+                                </button>
+                                <button class="btn-primario" style="padding: 6px 12px; font-size: 13px; display: inline-flex; background-color: var(--verde-saude);">
+                                    <i class="fa-solid fa-play"></i> Iniciar
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Paciente futuro -->
+                        <tr>
+                            <td><strong>15:00</strong></td>
+                            <td>João Pedro Alves</td>
+                            <td>Primeira Consulta</td>
+                            <td><span class="badge" style="background-color: #f1f3f5; color: #6c757d;">Não Chegou</span></td>
+                            <td class="text-center">
+                                <button class="btn-secundario" style="padding: 6px 12px; font-size: 13px; display: inline-flex; opacity: 0.5; cursor: not-allowed;">
+                                    Aguardando Recepção
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>
